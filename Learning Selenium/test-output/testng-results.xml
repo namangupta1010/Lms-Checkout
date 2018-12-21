@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="16314" started-at="2018-12-12T10:22:45Z" finished-at="2018-12-12T10:23:01Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="16314" started-at="2018-12-12T10:22:45Z" finished-at="2018-12-12T10:23:01Z">
+      <class name="test.StudySection_Questions">
+        <test-method status="PASS" signature="browserLaunch()[pri:0, instance:test.StudySection_Questions@fad74ee]" name="browserLaunch" is-config="true" duration-ms="7043" started-at="2018-12-12T10:22:45Z" finished-at="2018-12-12T10:22:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserLaunch -->
+        <test-method status="PASS" signature="questions()[pri:0, instance:test.StudySection_Questions@fad74ee]" name="questions" duration-ms="9255" started-at="2018-12-12T10:22:52Z" finished-at="2018-12-12T10:23:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- questions -->
+      </class> <!-- test.StudySection_Questions -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
