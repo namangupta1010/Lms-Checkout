@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="54481" started-at="2018-12-10T12:56:53Z" finished-at="2018-12-10T12:57:47Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="54481" started-at="2018-12-10T12:56:53Z" finished-at="2018-12-10T12:57:47Z">
+      <class name="lmsc_package.Forgot_Password">
+        <test-method status="PASS" signature="browserLaunch()[pri:0, instance:lmsc_package.Forgot_Password@1b604f19]" name="browserLaunch" is-config="true" duration-ms="9756" started-at="2018-12-10T12:56:53Z" finished-at="2018-12-10T12:57:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserLaunch -->
+        <test-method status="PASS" signature="forgot()[pri:0, instance:lmsc_package.Forgot_Password@1b604f19]" name="forgot" duration-ms="42274" started-at="2018-12-10T12:57:03Z" finished-at="2018-12-10T12:57:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- forgot -->
+        <test-method status="PASS" signature="exit()[pri:0, instance:lmsc_package.Forgot_Password@1b604f19]" name="exit" is-config="true" duration-ms="2429" started-at="2018-12-10T12:57:45Z" finished-at="2018-12-10T12:57:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- exit -->
+      </class> <!-- lmsc_package.Forgot_Password -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
