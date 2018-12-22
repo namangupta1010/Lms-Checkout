@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="Learning Java/src"/>
+	<classpathentry kind="src" path="Learning Selenium/src"/>
+	<classpathentry kind="src" path="LMSC_automation/src"/>
+	<classpathentry kind="lib" path="Learning Selenium/lib/selenium-server-standalone-3.14.0.jar"/>
+	<classpathentry kind="lib" path="Learning Selenium/lib/testng-7.0.0-beta1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
