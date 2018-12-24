@@ -31,7 +31,7 @@ public class DataDrivenTestingForLoop {
 		  c.manage().deleteAllCookies();
 	  }
 	@Test
-	public void ExcelRead() throws IOException
+	public void ExcelRead() throws IOException, InterruptedException
 	{
 	
 
@@ -47,22 +47,26 @@ public class DataDrivenTestingForLoop {
 			System.out.println(sheet.getRow(i).getCell(0).getStringCellValue());
 			System.out.println(sheet.getRow(i).getCell(1).getStringCellValue());
 			
-			
+			c.findElement(By.id("user_email")).clear();
+			c.findElement(By.id("user_password")).clear();
 			c.findElement(By.id("user_email")).sendKeys(sheet.getRow(i).getCell(0).getStringCellValue());
 			c.findElement(By.id("user_password")).sendKeys(sheet.getRow(i).getCell(1).getStringCellValue());
 			c.findElement(By.id("loginButton")).click();
 			
+			Thread.sleep(2000);
+			if(c.getTitle().contentEquals("Design Proposals for Free using Proposalways Proposal Management System"))
+			{
 			WebDriverWait wait=new WebDriverWait(c, 2000);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Help')]")));
 			
-			Assert.assertEquals("Design Proposals for Free using Proposalways Proposal Management System", c.getTitle());
+			
 			
 			c.findElement(By.id("navbarDropdownMenuLink")).click();
 			
 			
 			c.findElement(By.xpath("//a[contains(text(),'Logout')]")).click();
 			c.navigate().to("https://www.proposalways.com/userLogin");
-			
+			}
 		}
 	}
 		 @AfterMethod
