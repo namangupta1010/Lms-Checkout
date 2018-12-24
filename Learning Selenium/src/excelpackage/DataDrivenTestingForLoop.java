@@ -6,16 +6,35 @@ import java.io.IOException;
 
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 
 
 public class DataDrivenTestingForLoop {
 
-
+	WebDriver c;
+	 
+	  @BeforeMethod
+	  public void BrowserLaunch()
+	  {
+		  System.setProperty("webdriver.chrome.driver","D:\\Naman\\Selenium\\chromedriver_win32\\chromedriver.exe");
+		  c= new ChromeDriver();
+		  c.get("https://www.proposalways.com/userLogin");
+		  c.manage().deleteAllCookies();
+	  }
 	@Test
 	public void ExcelRead() throws IOException
 	{
+	
+
 		File filesource = new File("D:\\Proposalways.xlsx");
 		FileInputStream fileLoad =new FileInputStream(filesource);
 		XSSFWorkbook wb=new XSSFWorkbook(fileLoad);
@@ -24,9 +43,33 @@ public class DataDrivenTestingForLoop {
 		
 		for(int i=1;i<=sheet.getLastRowNum();i++)
 		{
+			
 			System.out.println(sheet.getRow(i).getCell(0).getStringCellValue());
 			System.out.println(sheet.getRow(i).getCell(1).getStringCellValue());
+			
+			
+			c.findElement(By.id("user_email")).sendKeys(sheet.getRow(i).getCell(0).getStringCellValue());
+			c.findElement(By.id("user_password")).sendKeys(sheet.getRow(i).getCell(1).getStringCellValue());
+			c.findElement(By.id("loginButton")).click();
+			
+			WebDriverWait wait=new WebDriverWait(c, 2000);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Help')]")));
+			
+			Assert.assertEquals("Design Proposals for Free using Proposalways Proposal Management System", c.getTitle());
+			
+			c.findElement(By.id("navbarDropdownMenuLink")).click();
+			
+			
+			c.findElement(By.xpath("//a[contains(text(),'Logout')]")).click();
+			c.navigate().to("https://www.proposalways.com/userLogin");
+			
 		}
+	}
+		 @AfterMethod
+		  public void logout() 
+		 {
+			 c.close();
+		 }
 
 }
-}
+
