@@ -10,11 +10,16 @@ public class CallingFromGeneric {
 	@Test
 	public void testData() throws IOException
 	{
-		Generic_dataDriven obj = new Generic_dataDriven();
-		XSSFSheet result = obj.ExcelGenricCode("C:\\Users\\webner\\git\\Lms-Checkout\\Learning Selenium\\src\\excelpackage\\Proposalways.xlsx","Sample Data");
+		Generic_dataDriven obj = new Generic_dataDriven("D:\\Proposalways.xlsx","Login Credentials");
+	      
+		obj.data(0, 1);
+		obj.data(5, 0);
 		
-		System.out.println(result.getRow(1).getCell(0).getStringCellValue());
-		System.out.println(result.getRow(1).getCell(1).getNumericCellValue());
+		//result.getRow(7).createCell(2).setCellValue("Hello World");
+		
+		
+	//	obj.Writesheet("D:\\Proposalways.xlsx","Login Credentials");
+		
 	}
 
 }
