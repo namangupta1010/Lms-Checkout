@@ -30,7 +30,7 @@ public class Generic_dataDriven
 	{
 		System.out.println(sheet.getRow(row).getCell(cell).getStringCellValue());
 		//System.out.println(sheet.getRow(row).getCell(cell).getStringCellValue());
-		sheet.getRow(row).createCell(cell).setCellValue("pass")
+		sheet.getRow(row).createCell(cell).setCellValue("pass");
 		
 		
 	}
