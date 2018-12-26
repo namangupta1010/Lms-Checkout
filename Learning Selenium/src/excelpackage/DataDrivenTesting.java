@@ -1,6 +1,7 @@
 package excelpackage;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -20,6 +21,8 @@ public class DataDrivenTesting
 		XSSFWorkbook wb=new XSSFWorkbook(fileLoad);
 		XSSFSheet sheet= wb.getSheet("Login Credentials");
 		
+		
+		
 		System.out.println(sheet.getRow(1).getCell(0).getStringCellValue());
 		System.out.println(sheet.getRow(1).getCell(1).getStringCellValue());
 		
@@ -31,6 +34,8 @@ public class DataDrivenTesting
 		
 		System.out.println(sheet.getRow(4).getCell(0).getStringCellValue());
 		System.out.println(sheet.getRow(4).getCell(1).getStringCellValue());
+		
+		wb.close();
 	}
 	
 		
