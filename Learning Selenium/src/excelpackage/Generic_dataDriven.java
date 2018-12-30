@@ -33,12 +33,11 @@ public class Generic_dataDriven
 		System.out.println(sheet.getRow(row).getCell(cell).getStringCellValue());
 		//System.out.println(sheet.getRow(row).getCell(cell).getStringCellValue());
 			
-		
 	}
 	
 	public void dataWrite(int row, int cell)
 	{
-	sheet.createRow(row).createCell(cell).setCellValue("pass");
+	sheet.getRow(row).createCell(cell).setCellValue("pass");
 //tem.out.println(sheet);
 	}
 	
@@ -49,9 +48,30 @@ public class Generic_dataDriven
 		 FileOutputStream fout = new FileOutputStream(FilePath);
 			wb.write(fout);
 	}
+	
+	
+	
+	//Generic Method of getting data from excel for dataProvider
+	public Object[][] getData()
+	{
+		Object[][] data = new Object[sheet.getLastRowNum()][sheet.getRow(0).getLastCellNum()];
+		
+		System.out.println(sheet.getRow(0).getLastCellNum());
+		
+		for(int i=0;i<sheet.getLastRowNum();i++)
+		{
+			for(int k=0;k<sheet.getRow(0).getLastCellNum();k++)
+			{
+			data[i][k]=sheet.getRow(i+1).getCell(k).getStringCellValue();		
+		}
+		}
+		return data;
+
+	}
 		
 	}
 	
 
 	
 
+	
