@@ -52,6 +52,7 @@ public class Generic_dataDriven
 	
 	
 	//Generic Method of getting data from excel for dataProvider
+	//sheet.getRow(0).getLastCellNum()---- It is for number of columns
 	public Object[][] getData()
 	{
 		Object[][] data = new Object[sheet.getLastRowNum()][sheet.getRow(0).getLastCellNum()];
