@@ -1,0 +1,17 @@
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Data Driven Framework">
+
+<test name="testing data">
+
+
+<classes>
+ 
+ <class name="excelpackage.DataDrivenTestingForLoop"/>
+ <class name="excelpackage.DataProviderTesting"/>
+ <class name="excelpackage.CallingFromGeneric"/>
+ 
+ </classes>
+ </test>
+ </suite>
