@@ -4,9 +4,7 @@
 <suite name="Data Driven Framework">
 
 <test name="testing data">
-
-
-<classes>
+ <classes>
  
  <class name="excelpackage.DataDrivenTestingForLoop"/>
  <class name="excelpackage.DataProviderTesting"/>
@@ -14,4 +12,20 @@
  
  </classes>
  </test>
- </suite>
+ 
+ 
+ 
+ <test name="Fundzbazar testing">
+
+<parameter name="browser" value="Chrome" />
+<parameter name="Url" value="https://www.fundzbazar.com/signin" />
+<parameter name="Email" value="test@gmail.com" />
+<parameter name="Password" value="abc123" />
+
+
+<classes>
+<class name="test.SampleTesting"/>
+ </classes>
+ </test>
+ 
+  </suite>
