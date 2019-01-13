@@ -19,7 +19,7 @@ public void Initialization()
 {
 	 try{
 		  prop = new Properties();
-			FileInputStream ip =new FileInputStream("/MarketLancingTest/src/main/java/com/Marketlancing/qa/config/config.properties");
+			FileInputStream ip =new FileInputStream("C:/Users/HP/git/Lms-Checkout/MarketLancingTest/src/main/java/com/Marketlancing/qa/config/config.properties");
 			prop.load(ip);
 		 }
 		 catch(IOException e)
