@@ -14,7 +14,7 @@ public class LoginPageTest extends TestBase {
 	public void setup()
 	{
 		Initialization();
-		 obj = new LoginPage(driver);
+		 obj = new LoginPage();
 	}
 	
 	
