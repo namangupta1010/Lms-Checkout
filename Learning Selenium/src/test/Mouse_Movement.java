@@ -4,10 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+
+
+
 
 public class Mouse_Movement {
 
@@ -37,11 +42,18 @@ public class Mouse_Movement {
 		for(String print : datearr)
 			System.out.println(print);
 		
-		c.findElement(By.xpath("//th[contains(text(),'September 2019')]")).click();
+		//c.findElement(By.xpath("//th[contains(text(),'September 2019')]")).click();
 		
 		
+		public static void Calender(WebElement element, WebDriver c)
+		{
 		
+		JavascriptExecutor js=((JavascriptExecutor)c);
+		js.executeScript("arguments[0].setAttribute('value');
 		
+		//table[@class=' table-condensed']//th[@class='next']
+		
+		}
 		
 		
 		
