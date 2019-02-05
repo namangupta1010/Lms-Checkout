@@ -18,7 +18,7 @@ public class Mouse_Movement {
 
 	public static void main(String[] args) throws InterruptedException{
 		// TODO Auto-generated method stub
-		System.setProperty("webdriver.chrome.driver","D:\\\\Naman\\\\Selenium\\\\chromedriver_win32\\\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","F:\\Selenium\\chromedriver_win32\\chromedriver.exe");
 		WebDriver c=new ChromeDriver();
 		c.manage().window().maximize();
 		c.get("https://www.proposalways.com/userLogin");
@@ -42,14 +42,22 @@ public class Mouse_Movement {
 		for(String print : datearr)
 			System.out.println(print);
 		
+		WebElement duedate =c.findElement(By.xpath("//input[@id='due_date']"));
+		 
+		String due_date ="2019-02-06";
+		System.out.println(duedate);
+		Calender(duedate,c,due_date);
+		System.out.println("hello proposalways");
+		Thread.sleep(3000);
+		
 		//c.findElement(By.xpath("//th[contains(text(),'September 2019')]")).click();
 		
-		
-		public static void Calender(WebElement element, WebDriver c)
+	}
+		public static void Calender(WebElement element, WebDriver c, String DateValue)
 		{
 		
 		JavascriptExecutor js=((JavascriptExecutor)c);
-		js.executeScript("arguments[0].setAttribute('value');
+		js.executeScript("arguments[0].setAttribute('value','"+DateValue+"');",element);
 		
 		//table[@class=' table-condensed']//th[@class='next']
 		
@@ -57,9 +65,9 @@ public class Mouse_Movement {
 		
 		
 		
-		c.close();
 		
 		
+}
 		
 		/*c.switchTo().frame(0);
 		Thread.sleep(5000);
@@ -82,8 +90,8 @@ public class Mouse_Movement {
 		c.findElement(By.id("showMatrix")).click();
 		c.findElement(By.id("btn_2_3")).click();
 		*/
-	}
+	
 
-}
+
 
 
