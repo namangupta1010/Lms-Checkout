@@ -45,9 +45,9 @@ public class Forgot_Password {
 		 //Switching to email
 		 
 		 c.navigate().to("https://www.gmail.com");
-		 c.findElement(By.xpath("//input[@type='email']")).sendKeys("naman.gupta@webners.com");
+		 c.findElement(By.xpath("//input[@type='email']")).sendKeys("");
 		 c.findElement(By.xpath("//span[contains(text(),'Next')]")).click();
-		 c.findElement(By.xpath("//input[@name='password']")).sendKeys("ng@12345678");
+		 c.findElement(By.xpath("//input[@name='password']")).sendKeys("");
 		 
 		 Thread.sleep(1000);
 		 c.findElement(By.xpath("//span[contains(text(),'Next')]")).click();
